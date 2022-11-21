@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Love Vertical Timeline</title> 
+ 
+    <audio autoplay loop>
+ 					<source src="老鼠爱大米.mp3" type="audio/mp3" />
+ 			</audio>
+ <style type="text/css">
+ body {
+ 	margin-left: 0px;
+ 	margin-top: 0px;
+ 	margin-right: 0px;
+ 	margin-bottom: 0px;
+ 	background-color: #FF62FF;
+ }
+ .content {
+ 	width: 80%;
+ 	color: whitesmoke;
+ 	height: 100%;
+ 	top: 0px;
+ 	left: 10%;
+ 	font-size: 18px;
+ 	line-height: 25px;
+ 	font-family: "微软雅黑";
+ 	margin-top: 0px;
+ }
+ body {
+ 	color: #FFF;
+ 	padding: 10px;
+ 	background: #FFF url(/bg_105_wrap2.jpg) no-repeat fixed top center;
+ 	margin-left: 0px;
+ 	margin-top: 0px;
+ 	margin-right: 0px;
+ 	margin-bottom: 0px;
+ }
+ .des {
+ 	font-size: 15px;
+ 	color: #3C3C3C;
+ 	/*width: 100%;*/
+ 	text-shadow : 0px 0px 1px #fff;
+ 	z-index:1000;					
+ 	right:20px;
+ 	position:fixed !important;
+ 	bottom:0px;
+ }
+ .des a {
+ 	color: #3C3C3C;
+ 	text-shadow : 0px 0px 1px #fff;
+ }
+ </style>
+ <script src="jquery-1.7.1.min.js" language="javascript" type="text/javascript"></script>
+ <script src="tao.js" language="javascript" type="text/javascript"></script>
+ <script>
+ $(document).ready(function(e) {
+ 	
+ 	/*禁止右键和隐藏鼠标*/
+ 	$("body").bind("contextmenu", function() {
+       return false;
+     });
+ 	/*定义文字最底部显示到哪儿*/
+ 	
+ 	
+ 	
+ 	var guangs=["　","|","　","|"];
+ 	var guangBiao="/";
+ 	var guangSub=0;
+ 	var guang=setInterval("$.guang()",120);
+ 	
+ 	var subs=0;
+     var string="亲爱的， ██我爱你██真的真的很爱你███只有在你的微笑里，我才有呼吸，还贪恋着你的风情██诱惑着你的神秘，埋葬了我的爱情，脉脉之情如一溪春水██快刀难斩断，随着天各一方的时间越来越长，我的思念也越来越深██我很想找一个万籁俱寂的深夜或一个阳光明媚的早晨，把许多心底的惆怅██寂寞向你倾诉。 某某，我们的故事是最感人，最真实的，早安，我永恒的爱人██虽然我尚未起床，但思想已经飞到你的身边来了，不管今世也好来世也好██我所要的只有你。我要与你同坐在有着月光的草坪上，一起遥望着繁星点缀的夜空██讲述那人间古老的爱情神话。人生不止，寂寞不已。██████寂寞人生爱无休，寂寞是爱永远的主题。██某某，保留一个最浪漫的故事，给你一声祝福，一个kiss，爱你直到永远！ 某某，理解我吗？████ 我不是弱智，但我会傻傻的爱你到永远。某某，我只想和你白头到老，美轮美奂的你编织着神话，创造着奇迹，只因让我遇到你。接受我，好吗？----你的林 ";
+ 	$.intent=function(str){
+ 		str="　　"+str;
+ 		//var reg=new RegExp("/█{1,2}/","i"); //创建正则RegExp对象
+         str=str.replace(eval("/█/gi"),"█");
+ 
+ 		return str;
+ 	}
+ 	string=$.intent(string);
+ 	
+ 	var echo=setInterval("$.echo()",300);
+ 		
+ 	
+ 	
+ 	$.guang=function(){
+ 		  if(guangSub<guangs.length-1){
+ 			    guangSub++;
+ 			  }else{
+ 				  guangSub=0;
+ 				  }
+ 			guangBiao=guangs[guangSub];
+ 			$("#guang").html(guangBiao);
+ 			
+ 		}
+ 	
+ 	$.echo=function(){
+ 		if(subs<string.length){
+ 		$("#txt").html($("#txt").html()+$.repl(string.substr(subs,1)));
+ 		if($("#guang").offset().top > document.body.scrollHeight / 2){
+ 		  window.scrollTo(0,$("#guang").offset().top);
+ 		}
+                $(".des").css("bottom","0px");
+ 		subs++;
+ 		}
+ 	}
+ 	$.repl=function(str){
+ 		str=str.replace("\r\n","<br/>");
+ 		str=str.replace("\n","<br/>");
+ 		str=str.replace("█","<br/>");
+ 		return str;
+ 		}
+ });
+ 
+ </script>
+ <!-- 截断 -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100i,300,400,500,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Allura" rel="stylesheet">
+  
+  <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'>
+
+      <link rel="stylesheet" href="css/style.css"> 
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css"> 
+<link type="text/css" href="css/style.css" rel="stylesheet" /> 
+<script src="js/jquery-1.8.3.min.js" type="text/javascript"></script>  
+<script src="js/script.js" type="text/javascript"></script> 
+ 
+  </head>
+<body>     
+  <canvas style="background: pink;"></canvas> <!--canvas 画布-->
+   <div id="h1" style="position: absolute;left:296px;top:250px;font-size:22px;color: #00007f;"></div>
+  <div class="container" style="position:absolute;left:152px;top:111.5px;font-size: 40px;">
+   
+  	<div style="text-align: center;"> 
+  		<div class="words">
+   
+  		<!-- <img src="http://q1.qlogo.cn/g?b=qq&nk=3114336033&s=640" style="width: 100px;height: 100px;vertical-align: -20px;border-radius: 50%;margin-right: 5px;margin-bottom: 5px;-webkit-box-shadow: 1px 1px 1px rgba(0,0,0,.1), 1px 1px 1px rgba(0,0,0,0.1), 1px 1px 1px rgba(0,0,0,0.1);box-shadow: 1px 1px 1px rgba(0,0,0,.1), 1px 1px 1px rgba(0,0,0,0.1), 1px 1px 1px rgba(0,0,0,0.1);border: 2px solid #fff;"> -->
+   
+  		<i class="fa fa-heartbeat" style="font-size:48px;color:red"></i>
+   
+  		<!-- <img src="http://q1.qlogo.cn/g?b=qq&nk=2424379490&s=640" style="width: 100px;height: 100px;vertical-align: -20px;border-radius: 50%;margin-right: 5px;margin-bottom: 5px;-webkit-box-shadow: 1px 1px 1px rgba(0,0,0,.1), 1px 1px 1px rgba(0,0,0,0.1), 1px 1px 1px rgba(0,0,0,0.1);box-shadow: 1px 1px 1px rgba(0,0,0,.1), 1px 1px 1px rgba(0,0,0,0.1), 1px 1px 1px rgba(0,0,0,0.1);border: 2px solid #fff;"> -->
+   
+  	</div>
+  
+  
+  	<div class="days">
+  
+  
+  		<span class="days-number">105</span>
+  
+  
+  		<span class="days-label">天</span>
+  
+  
+  	</div>
+  
+  
+  	<div class="seconds">10 hours 24 minutes 30 seconds</div>
+  
+  
+  </div>
+    	</div>
+ <script>
+ var canvas = document.querySelector("canvas"),
+   ctx = canvas.getContext("2d");
+ 
+ var ww,wh;
+ 
+ function onResize(){
+   ww = canvas.width = window.innerWidth;
+   wh = canvas.height = window.innerHeight;
+ }
+ 
+ ctx.strokeStyle = "red";
+ ctx.shadowBlur = 25;
+ ctx.shadowColor = "hsla(0, 100%, 60%,0.5)";
+ 
+ var precision = 100;
+ var hearts = [];
+ var mouseMoved = false;
+ function onMove(e){
+   mouseMoved = true;
+   if(e.type === "touchmove"){
+     hearts.push(new Heart(e.touches[0].clientX, e.touches[0].clientY));
+     hearts.push(new Heart(e.touches[0].clientX, e.touches[0].clientY));
+   }
+   else{
+     hearts.push(new Heart(e.clientX, e.clientY));
+     hearts.push(new Heart(e.clientX, e.clientY));
+   }
+ }
+ 
+ var Heart = function(x,y){
+   this.x = x || Math.random()*ww;
+   this.y = y || Math.random()*wh;
+   this.size = Math.random()*2 + 1;
+   this.shadowBlur = Math.random() * 10;
+   this.speedX = (Math.random()+0.2-0.6) * 8;
+   this.speedY = (Math.random()+0.2-0.6) * 8;
+   this.speedSize = Math.random()*0.05 + 0.01;
+   this.opacity = 1;
+   this.vertices = [];
+   for (var i = 0; i < precision; i++) {
+     var step = (i / precision - 0.5) * (Math.PI * 2);
+     var vector = {
+       x : (15 * Math.pow(Math.sin(step), 3)),
+       y : -(13 * Math.cos(step) - 5 * Math.cos(2 * step) - 2 * Math.cos(3 * step) - Math.cos(4 * step)) 
+     }
+     this.vertices.push(vector);
+   }
+ }
+ 
+ Heart.prototype.draw = function(){
+   this.size -= this.speedSize;
+   this.x += this.speedX;
+   this.y += this.speedY;
+   ctx.save();
+   ctx.translate(-1000,this.y);
+   ctx.scale(this.size, this.size);
+   ctx.beginPath();
+   for (var i = 0; i < precision; i++) {
+     var vector = this.vertices[i];
+     ctx.lineTo(vector.x, vector.y);
+   }
+   ctx.globalAlpha = this.size;
+   ctx.shadowBlur = Math.round((3 - this.size) * 10);
+   ctx.shadowColor = "hsla(0, 100%, 60%,0.5)";
+   ctx.shadowOffsetX = this.x + 1000;
+   ctx.globalCompositeOperation = "screen"
+   ctx.closePath();
+   ctx.fill()
+   ctx.restore();
+ };
+ 
+ 
+ function render(a){
+   requestAnimationFrame(render);
+ 
+   hearts.push(new Heart())
+   ctx.clearRect(0,0,ww,wh);
+   for (var i = 0; i < hearts.length; i++) {
+     hearts[i].draw();
+     if(hearts[i].size <= 0){
+       hearts.splice(i,1);
+       i--;
+     }
+   }
+ }
+  
+ onResize();
+ window.addEventListener("mousemove", onMove);
+ window.addEventListener("touchmove", onMove);
+ window.addEventListener("resize", onResize);
+ requestAnimationFrame(render);
+ 
+ window.onload=function starttime(){
+         time(h1,'2022,9,12');     // 刚在一起的时间
+         ptimer = setTimeout(starttime,1000); // 添加计时器
+ }
+ 
+     function time(obj,futimg){
+         var nowtime = new Date().getTime(); // 现在时间转换为时间戳
+         var futruetime =  new Date(futimg).getTime(); // 未来时间转换为时间戳
+         var msec = nowtime-futruetime; // 毫秒 未来时间-现在时间
+         var time = (msec/1000);  // 毫秒/1000
+         var day = parseInt(time/86400); // 天  24*60*60*1000 
+         var hour = parseInt(time/3600)-24*day;    // 小时 60*60 总小时数-过去的小时数=现在的小时数 
+         var minute = parseInt(time%3600/60); // 分 -(day*24) 以60秒为一整份 取余 剩下秒数 秒数/60 就是分钟数
+         var second = parseInt(time%60);  // 以60秒为一整份 取余 剩下秒数
+         obj.innerHTML=" <br><br> &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; 嘟嘟嘟<br>即将"+day+"天"+"啦<br><span>我坚信<br>不管面临多大的压力,不管前面的路如何崎岖.<br>不管经历过什么,我仍相信未来的我们将是最棒的！<br>相信中间的计时器,将永远继续下去,直至数据溢出.</span>"
+ 
+         return true;
+     }
+ </script>
+
+  <header>
+	  
+    <div class="container text-center">
+      <h1>We love Vertical Timeline</h1>
+      <p>Mr Wu ♡ Ms Wang</p>
+    </div>
+<div align="left" class="content"><span  id="txt"></span><span id="guang"></span>
+<span></span>
+  </header>
+
+  <section class="timeline">
+    <div class="container">
+      <div class="timeline-item">
+        <div class="timeline-img"></div>
+
+        <div class="timeline-content js--fadeInLeft">
+         
+		 <div class="timeline-img-header">
+			 <h2>相识</h2>
+		 </div>
+       		<div class="date">2022.9.12</div>
+          <p>It is the first time we’ve met. I am so happy.</p>
+          <a class="bnt-more" href="img/2022.9.12.png"">More</a>
+        </div>
+      </div> 
+      
+      <div class="timeline-item">
+
+        <div class="timeline-img"></div> 
+        <div class="timeline-content js--fadeInRight"> 
+          	<h2>见面</h2>		 
+        	<div class="date">2022.9.17</div>
+          <p>星期六，我们见面啦 把宝宝抱的可紧可紧啦 嘻嘻（本来说好1点走的，结果要陪姐妹然后就提前走了，然后去了又发现无聊，又回来找我呀，太好笑了）星期天也是差不多哦</p>
+          <a class="bnt-more" href="javascript:alert('啥也没有哦宝宝')">More</a>
+        </div>
+
+      </div>   
+      
+      <div class="timeline-item">
+
+        <div class="timeline-img"></div>
+
+        <div class="timeline-content  js--fadeInLeft">
+        	
+			<div class="timeline-img-header"> 
+          <h2>宝宝的生日哦</h2> 
+		  </div>
+		  <div class="date">2022.10.9</div>
+          <blockquote>你的过去我来不及参与，你的未来我陪你到底。!</blockquote>
+		     <a class="bnt-more" href="img/2022.10.9.jpg">More</a>
+        </div>
+      </div>   
+      
+      <div class="timeline-item">
+
+        <div class="timeline-img"></div>
+
+        <div class="timeline-content js--fadeInRight">
+				<div class="timeline-img-header"> 
+        	<h2>一个月零一天</h2>
+			  </div>
+        	<div class="date">2022.10.14</div>
+          <p>这天是10月14日，疫情来临，格外珍惜彼此</p>
+          <a class="bnt-more" href="img/2022.10.14.png">More</a>
+        </div>
+      </div>   
+      
+      <div class="timeline-item"> 
+        <div class="timeline-img"></div> 
+        <div class="timeline-content timeline-card js--fadeInLeft">
+        	<div class="timeline-img-header">
+          	<h2>都是视频惹的祸</h2>
+        	</div>
+        	<div class="date">2022.10.28</div>
+          <p>因为快手分享的视频然后你就吃醋了然后生气，哄了好久噢.</p>
+          <a class="bnt-more" href="javascript:alert('宝宝只能说好委屈')">More</a>
+        </div>
+      </div>   
+
+      <div class="timeline-item">
+
+        <div class="timeline-img"></div>
+
+        <div class="timeline-content timeline-card js--fadeInRight">
+        	<div class="timeline-img-header">
+          	<h2>很容易就被宝宝感动</h2>
+        	</div>
+        	<div class="date">2022.11.5</div>
+          <p>宝宝真的很乖很乖呀，不管宝宝啥样子，都很爱很爱宝宝.</p>
+          <a class="bnt-more" href="img/2022.11.5.png">More</a>
+        </div>
+      </div>  
+       
+ 
+      
+      <div class="timeline-item">
+
+        <div class="timeline-img"></div>
+
+        <div class="timeline-content js--fadeInLeft">
+        	<div class="date">2022.10.27</div>
+          <h2>留给宝宝的话</h2>
+          <p>后面更多更多的故事，等着和宝宝一起探索哦！！！.</p>
+          <a class="bnt-more" href="javascript:alert('最爱宝宝啦')">More</a>
+        </div>
+      </div>   
+
+      
+          
+    </div>
+  </section>
+  <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+<script src='https://cdn.jsdelivr.net/scrollreveal.js/3.3.1/scrollreveal.min.js'></script>
+
+    <script src="js/index.js"></script>
+</body>
+</html>
